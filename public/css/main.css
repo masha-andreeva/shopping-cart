@@ -1,0 +1,31 @@
+.add-product-form label {
+    width: 300px;
+}
+
+.add-product-form span {
+    margin: 5px;
+    float: left;
+}
+
+.product-form-input {
+    float: right;
+    padding: 5px;
+}
+
+.add-product-form ul {
+    list-style-type: none;
+}
+
+#productCartContainer {
+    background: transparent;
+    color: white;
+    font-family: Droid Sans;
+    font-size: 40px;
+    line-height: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 5px 5px rgba(0,0,0,.2);
+    border-radius: 50px;
+    float:right;
+}

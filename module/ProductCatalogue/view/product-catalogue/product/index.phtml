@@ -1,0 +1,37 @@
+<?php
+
+$title = 'Products';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('product', array('action' => 'add')); ?>">Add new product</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Photo</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($products as $product) : ?>
+        <tr>
+            <td><?php echo $this->escapeHtml($product->name); ?></td>
+            <td><?php echo $this->escapeHtml($product->price); ?> руб.</td>
+            <td><?php echo $this->escapeHtml($product->description); ?></td>
+            <td>
+                <img height="50" src="<?php echo $this->basePath('photo/') . $product->photo; ?> " />
+            </td>
+            <td>
+                <a href="<?php echo $this->url('product', array('action' => 'edit', 'id' => $product->id));
+    ?>">Edit</a> |
+                <a href="<?php echo $this->url('product', array('action' => 'delete', 'id' => $product->id));
+    ?>">Delete</a> |
+                <a href="#" onclick="mainPage.shoppingCart.addProductToCart(<?php echo $product->id; ?>); return false;">Add to Cart</a>
+    <input type="number" name="product_count" id="productCount_<?php echo $product->id; ?>" min="1" max="10" value="1">
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

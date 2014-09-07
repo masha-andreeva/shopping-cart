@@ -1,0 +1,30 @@
+<?php
+$title = 'Add new product';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form->setAttribute('action', $this->url('product', array('action' => 'add')));
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+?>
+<div class="container">
+    <div class="row">
+        <?php echo $this->formRow($form->get('name')); ?>
+    </div>
+    <div class="row">
+        <?php echo $this->formRow($form->get('price')); ?>
+    </div>
+    <div class="row">
+        <?php echo $this->formRow($form->get('description')); ?>
+    </div>
+    <div class="row">
+        <?php echo $this->formRow($form->get('photo')); ?>
+    </div>
+    <div class="row">
+        <?php echo $this->formSubmit($form->get('submit')); ?>
+    </div>
+</div>
+<?php
+echo $this->form()->closeTag();
