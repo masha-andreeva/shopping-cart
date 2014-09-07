@@ -14,6 +14,8 @@ and use `composer` to install dependencies using the `create-project` command:
     curl -s https://getcomposer.org/installer | php --
     php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application path/to/install
 
+# Data Base 
+export sql file from here data/shopping_cart.sql
 
 ### Apache Setup
 
